@@ -1,0 +1,41 @@
+.all{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1024px;
+}
+.all .container{
+    /* background-color: deepskyblue; */
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.all .container .bmi-box{
+    background-color: lightgrey;
+    width: 200px;
+    height: 200px;
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    border-radius: 25%;
+}
+
+.all .container .title{
+    margin: 25px 0px;
+}
+
+.all .container .bmi-table{
+    margin-bottom: 25px;
+}
+
+.all .container button{
+    background-color: #92D1FF;
+    border: #92D1FF solid 1px;
+    border-radius: 10%;
+    width: 120px;
+    height: 30px;
+}

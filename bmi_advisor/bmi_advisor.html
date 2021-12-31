@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bmi Advisor</title>
+    
+    <link rel="stylesheet" href="bmi_advisor.css">
+</head>
+<body>
+    <div class="all" onload="return showBMI">
+        <div class="container">
+            <div class="bmi-box" >
+                <!-- bmi nya taro disini -->
+                <h2 id="bmi-box">14</h1>
+            </div>
+            <div class="title">
+               <label id="title"></label> 
+            </div>
+
+            <div class="bmi-table">
+                <table>
+                    <tr>
+                        <th>BMI Index Range</th>
+                        <th>Results</th>
+                    </tr>
+                    <tr>
+                        <td> Less than 18.5 </td>
+                        <td> Underweight </td>
+                    </tr>
+                    <tr>
+                        <td> 18.5 - 24.9</td>
+                        <td> Normal </td>
+                    </tr>
+                    <tr>
+                        <td> 25.0 - 29.9</td>
+                        <td> Overweight</td>
+                    </tr>
+                    <tr>
+                        <td> More than 30</td>
+                        <td> Obesity </td>
+                    </tr>
+                </table>
+            </div>
+
+            <button id="bmi-advisor-details">
+                More Details
+            </button>
+        </div>
+    </div>
+
+    <script src="bmi_advisor.js"></script>
+</body>
+</html>
