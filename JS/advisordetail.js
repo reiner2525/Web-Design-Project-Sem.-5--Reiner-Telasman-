@@ -1,8 +1,10 @@
 var underweightcard = document.getElementById('underweightid');
 var normalcard = document.getElementById('normalid');
+var overweightcard = document.getElementById('overweightid')
 
 underweightcard.style.display ="none"
 normalcard.style.display="none"
+overweightcard.style.display="none"
 function underweight()
 {
 
@@ -11,6 +13,7 @@ function underweight()
     {
         underweightcard.style.display = "block";
         normalcard.style.display ="none"
+        overweightcard.style.display ="none";
     }
     else
     {
@@ -28,6 +31,7 @@ function Normal()
     {
         normalcard.style.display = "block";
         underweightcard.style.display = "none"
+        overweightcard.style.display ="none";
     }
     else
     {
@@ -35,4 +39,20 @@ function Normal()
     }
 
  
+}
+
+function overweight()
+{
+    if(overweightcard.style.display == "none")
+    {
+        overweightcard.style.display = "block";
+        underweightcard.style.display = "none"
+        normalcard.style.display ="none";
+    }
+    else
+    {
+        overweightcard.style.display ="none"
+    }
+    
+
 }
