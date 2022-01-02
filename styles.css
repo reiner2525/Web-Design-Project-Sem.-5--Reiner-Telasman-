@@ -6,7 +6,42 @@
 
 body {
   padding: 10%;
+  font-family: "Open Sans", sans-serif;
 }
+
+.unit-selector-container {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 1.5em;
+}
+
+.unit-selector-container label {
+  display: inline-block;
+  position: relative;
+  transition: 0.2s;
+}
+.unit-selector-container label:after {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 3px;
+  right: 25%;
+  bottom: -15%;
+  background-color: #0275d8;
+}
+
+.unit-selector-container label:hover {
+  color: #0275d8;
+  transform: scale(1.1);
+}
+.unit-selector-container label:hover::after {
+  width: 50px;
+}
+
+/* .unit-selector-container label {
+  text-decoration: underline;
+  transform: scale(1.5);
+} */
 
 .input-container {
   display: flex;
@@ -41,6 +76,11 @@ form #calculate-button {
   font-size: 1.5em;
   border-radius: 50px;
   margin-top: 100px;
+  background-color: #0275d8;
+}
+
+form #calculate-button:hover {
+  color: white;
 }
 
 .result-container {

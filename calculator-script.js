@@ -1,37 +1,60 @@
-if (document.getElementById("imperial").checked) {
-  console.log("imperial checked");
+var isImperial = true;
+
+function onLoadFunction() {
+  if (document.getElementById("imperial").checked) {
+    console.log("imperial checked");
+  }
+}
+
+function imperialChecked() {
+  document.getElementById("weight").placeholder = "Pound";
+  document.getElementById("height").placeholder = "Inches";
+  document.getElementById("weight").value = "";
+  document.getElementById("height").value = "";
+  document.getElementById("imperialLabel").style.color = "#0275D8";
+  document.getElementById("metricLabel").style.color = null;
+
+  isImperial = true;
+}
+
+function metricChecked() {
+  document.getElementById("weight").placeholder = "Kgs";
+  document.getElementById("height").placeholder = "Centimetre";
+  document.getElementById("weight").value = "";
+  document.getElementById("height").value = "";
+  document.getElementById("metricLabel").style.color = "#0275D8";
+  document.getElementById("imperialLabel").style.color = null;
+
+  isImperial = false;
 }
 
 function bmiCount() {
-  var weight_kgs = document.getElementById("weight").value;
+  var bmi = 0.0;
+  var weight = document.getElementById("weight").value;
+  var height = document.getElementById("height").value;
 
-  var height_cm = document.getElementById("height").value;
-  var bmi = parseFloat(weight_kgs / Math.pow(height_cm / 100, 2)).toFixed(2);
+  if (isImperial) {
+    bmi = parseFloat((weight / Math.pow(height, 2)) * 703).toFixed(2);
+  } else {
+    bmi = parseFloat(weight / Math.pow(height / 100, 2)).toFixed(2);
+  }
 
-  document.getElementById("bmi-result").innerHTML = bmi;
-
-  if (bmi < 18.5)
-    document.getElementById("status-result").innerHTML = "Underweight";
-  else if (bmi > 18.5 && bmi < 25)
-    document.getElementById("status-result").innerHTML = "Healthy";
-  else if (bmi > 25 && bmi < 30)
-    document.getElementById("status-result").innerHTML = "Overweight";
-  else if (bmi > 30 && bmi < 35)
-    document.getElementById("status-result").innerHTML = "Obesity Class I";
-  else if (bmi > 35 && bmi < 40)
-    document.getElementById("status-result").innerHTML = "Obesity Class II";
-  else if (bmi > 40)
-    document.getElementById("status-result").innerHTML =
-      "Obesity Class III / Severe Obesity";
-
-  console.log(bmi);
-}
-
-function helo() {
-  console.log("Weight kgs = " + weight_kgs);
-  console.log("Height cm = " + height_cm);
-
-  alert(document.getElementById("weight-kgs").value);
-  console.log(document.getElementById("weight-kgs").value);
-  console.log(weight_kgs);
+  if (weight === "" || height === "") {
+    window.alert("Please complete inputs!");
+  } else {
+    document.getElementById("bmi-result").innerHTML = bmi;
+    if (bmi < 18.5)
+      document.getElementById("status-result").innerHTML = "Underweight";
+    else if (bmi > 18.5 && bmi < 25)
+      document.getElementById("status-result").innerHTML = "Healthy";
+    else if (bmi > 25 && bmi < 30)
+      document.getElementById("status-result").innerHTML = "Overweight";
+    else if (bmi > 30 && bmi < 35)
+      document.getElementById("status-result").innerHTML = "Obesity Class I";
+    else if (bmi > 35 && bmi < 40)
+      document.getElementById("status-result").innerHTML = "Obesity Class II";
+    else if (bmi > 40)
+      document.getElementById("status-result").innerHTML =
+        "Obesity Class III / Severe Obesity";
+  }
 }
